@@ -1,8 +1,15 @@
 var knex = require('knex')({
-  client: 'pg'
+  client: 'pg',
   connection: {
+    user: 'clemcapelbird',
     database: 'myapp_test'
   }
 });
 
-var bookshelf = require('bookshelf')(knex)
+module.exports = require('bookshelf')(knex);
+
+var bookshelf = require('bookshelf')(knex);
+
+var User = bookshelf.Model.extend({
+  tableName: 'users'
+});
