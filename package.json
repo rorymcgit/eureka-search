@@ -1,0 +1,20 @@
+{
+  "name": "dont-google-it",
+  "version": "1.0.0",
+  "description": "Final project (weeks 11 & 12) at Makers Academy. Tasked with working on a project of our choice in languages and testing frameworks of our choice.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec/**/**.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClemCB/dont-google-it.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClemCB/dont-google-it/issues"
+  },
+  "homepage": "https://github.com/ClemCB/dont-google-it#readme"
+}
