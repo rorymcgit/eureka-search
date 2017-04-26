@@ -1,14 +1,12 @@
 var express = require('express');
 var app = express();
 
-var pgp = require('pg-promise')(/*options*/);
+var pgp = require('pg-promise')({noLocking:true});
 var db = pgp('postgres://localhost/app_test');
 
 app.get('/', function (req, res) {
   res.send('Search by appending the url with your query');
 });
-
-module.exports = (app)
 
 app.get('/:myquery', function (req, res) {
   db.many("SELECT url FROM links WHERE title = '" + req.params.myquery + "'")
@@ -27,3 +25,5 @@ app.get('/:myquery', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
+
+module.exports = app;
