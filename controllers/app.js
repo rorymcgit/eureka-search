@@ -8,6 +8,8 @@ app.get('/', function (req, res) {
   res.send('Search by appending the url with your query');
 });
 
+module.exports = (app)
+
 app.get('/:myquery', function (req, res) {
   db.many("SELECT url FROM links WHERE title = '" + req.params.myquery + "'")
     .then(function (data) {
