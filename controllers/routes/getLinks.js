@@ -1,17 +1,13 @@
-var retrieval = require('../../models/urlRetrieval');
-var db = require('../../db');
+var db = require('../../db.js');
 
 function getLinks(req, res) {
-  if (req.params.query !== 'favicon.ico'){
-    db.many("SELECT url FROM links WHERE title = '" + req.params.query + "'")
-      .then(function (data) {
-        var urls = retrieval(data);
-        res.send(urls.join("</br>"));
-      })
-      .catch(function (error) {
-        console.log('ERROR:', error);
-    });
-  }
+  db.map('SELECT url FROM links WHERE title = ${query}', req.params, a => a.url)
+    .then(function (urls) {
+      res.send(urls.join("</br>"));
+    })
+    .catch(function (error) {
+      console.log('ERROR:', error);
+  });
 }
 
 module.exports = getLinks;
