@@ -1,29 +1,26 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const router = express.Router();
+const getLinks = require('./routes/getLinks');
+const stuff = require('./routes/stuff');
 
-var pgp = require('pg-promise')({noLocking:true});
-var db = pgp('postgres://localhost/app_test');
+app.use(router);
+// app.use(express.bodyParser());
 
-app.get('/', function (req, res) {
-  res.send('Search by appending the url with your query');
+router.get('/:query', getLinks);
+
+router.get('/', function (req, res) {
+  res.render('myindex', {title: 'my index'});
 });
 
-app.get('/:myquery', function (req, res) {
-  db.many("SELECT url FROM links WHERE title = '" + req.params.myquery + "'")
-    .then(function (data) {
-      var urls = [];
-      for(var i = 0; i < data.length; i++) {
-        urls.push(data[i].url);
-      }
-      res.send(urls);
-    })
-    .catch(function (error) {
-      console.log('ERROR:', error);
-  });
+router.get('/this/stuff', stuff);
+
+app.post('/searchquery', function (req, res) {
+  res.render('myindex', { name: req.body.searchquery });
 });
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('App listening on port 3000!');
 });
 
-module.exports = app;
+module.exports = router;
