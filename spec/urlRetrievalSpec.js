@@ -10,7 +10,7 @@ const urlRetrieval = require('../models/urlRetrieval');
 describe('retrieval', () => {
   it('adds urls from database rows to an array', () => {
     var fakeData;
-    fakeData = [{ url: 'www.cats.com' }];
+    fakeData = [{ weburl: 'www.cats.com' }];
     var retrieved = urlRetrieval(fakeData);
     expect(retrieved[0]).to.equal("www.cats.com");
   });

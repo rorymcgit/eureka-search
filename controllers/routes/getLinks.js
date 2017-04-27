@@ -10,7 +10,7 @@ function getLinks(req, res) {
   if(req.params.query !== 'favicon.ico'){
     /// many, then and catch is from the promise library
     /// 'many' retrieves from db urls where search term matches links 'title'(db)
-    db.many("SELECT url FROM links WHERE title = '" + req.params.query + "'")
+    db.many("SELECT weburl FROM weburlsandtitles WHERE title = '" + req.params.query + "'")
       .then(function (data) {
         var urls = urlRetrieval(data);
         res.send(urls.join("</br>"));
