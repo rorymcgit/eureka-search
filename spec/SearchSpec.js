@@ -1,10 +1,21 @@
 'use strict';
 
-var assert = require('assert');
-var Search = require('../src/Search.js');
+const sinon = require('sinon');
+require('chai').use(require('sinon-chai'));
+const expect = require('chai').expect;
+const assert = require('assert');
+const getLinks = require('../controllers/routes/getLinks');
 
-describe('Search', () => {
-  it('should have a function hello', () => {
-    assert.equal(Search.hello, "hello")
+const db = require('../db.js');
+
+describe('query', () => {
+  it('getLinks function calls mydb.many', () => {
+    var fakeRequest, fakeResponse, spyDB;
+    fakeRequest = { params: { query: 'cats' } };
+    fakeResponse = {};
+    spyDB = sinon.spy(db, 'many');
+    getLinks(fakeRequest, fakeResponse);
+    expect(spyDB).called;
+    spyDB.restore();
   });
 });
