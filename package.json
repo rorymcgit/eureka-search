@@ -2,7 +2,7 @@
   "name": "dont-google-it",
   "version": "1.0.0",
   "description": "Final project (weeks 11 & 12) at Makers Academy. Tasked with working on a project of our choice in languages and testing frameworks of our choice.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha spec/"
   },
@@ -25,6 +25,7 @@
     "bookshelf": "^0.10.3",
     "express": "^4.15.2",
     "knex": "^0.12.9",
+    "nodemon": "^1.11.0",
     "pg": "^6.1.5",
     "sinon-chai": "^2.9.0"
   }

@@ -1,4 +1,4 @@
-var retrieval = require('../../models/urlRetrieval');
+var urlRetrieval = require('../../models/urlRetrieval');
 
 var db = require('../../db');
 var pgp = require('pg-promise')({noLocking:true});
@@ -12,7 +12,7 @@ function getLinks(req, res) {
     /// 'many' retrieves from db urls where search term matches links 'title'(db)
     db.many("SELECT url FROM links WHERE title = '" + req.params.query + "'")
       .then(function (data) {
-        var urls = retrieval(data);
+        var urls = urlRetrieval(data);
         res.send(urls.join("</br>"));
       })
       /// catching any errors e.g query not in database
