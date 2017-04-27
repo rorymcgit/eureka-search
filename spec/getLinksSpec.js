@@ -9,7 +9,7 @@ const getLinks = require('../controllers/routes/getLinks');
 const db = require('../db.js');
 
 describe('query', () => {
-  it('getLinks function calls mydb.many', () => {
+  it('getLinks calls database querier', () => {
     var fakeRequest, fakeResponse, spyDB;
     fakeRequest = { params: { query: 'cats' } };
     fakeResponse = {};
