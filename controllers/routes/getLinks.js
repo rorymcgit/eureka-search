@@ -1,4 +1,7 @@
 var db = require('../../db.js');
+var pgp = require('pg-promise')({noLocking:true});
+var QueryResultError = pgp.errors.QueryResultError;
+var qrec = pgp.errors.queryResultErrorCode;
 
 function getLinks(req, res) {
 	if (req.params.query !== 'favicon.ico') {
@@ -7,7 +10,9 @@ function getLinks(req, res) {
 				res.send(urls.join("</br>"));
 			})
 			.catch(function (error) {
-				console.log('ERROR:', error);
+        console.log('The error is:\n', error);
+        if(error.code === qrec.noData) {
+          res.send("no links match your query");
 			});
 	}
 }
