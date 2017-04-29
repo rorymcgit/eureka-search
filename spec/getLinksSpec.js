@@ -13,7 +13,7 @@ describe('query', () => {
     var fakeRequest, fakeResponse, spyDB;
     fakeRequest = { params: { query: 'cats' } };
     fakeResponse = {};
-    spyDB = sinon.spy(db, 'many');
+    spyDB = sinon.spy(db, 'map');
     getLinks(fakeRequest, fakeResponse);
     expect(spyDB).called;
     spyDB.restore();

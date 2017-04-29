@@ -13,7 +13,8 @@ function getLinks(req, res) {
         console.log('The error is:\n', error);
         if(error.code === qrec.noData) {
           res.send("no links match your query");
-			});
+			}
+		});
 	}
 }
 
