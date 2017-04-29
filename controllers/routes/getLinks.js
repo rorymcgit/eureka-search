@@ -4,7 +4,7 @@ var QueryResultError = pgp.errors.QueryResultError;
 var qrec = pgp.errors.queryResultErrorCode;
 
 function getLinks(req, res) {
-	// if(req.params.query !== 'favicon.ico') {
+	if(req.params.query !== 'favicon.ico') {
 		db.map('SELECT weburl FROM weburlsandcontent WHERE title = ${query}', req.params, a => a.weburl)
 			.then(function (urls) {
 				res.send(urls.join("</br>"));
@@ -15,7 +15,7 @@ function getLinks(req, res) {
           res.send("No links match your query.");
 			}
 		});
-	// }
+	}
 }
 
 module.exports = getLinks;
