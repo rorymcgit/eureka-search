@@ -1,4 +1,4 @@
-function urlRetrieval(data) {
+function dataRetrieval(data) {
   var urls = [];
   for(var i = 0; i < data.length; i++) {
     urls.push(data[i].weburl);
@@ -9,4 +9,4 @@ function urlRetrieval(data) {
   return urls;
 }
 
-module.exports = urlRetrieval;
+module.exports = dataRetrieval;

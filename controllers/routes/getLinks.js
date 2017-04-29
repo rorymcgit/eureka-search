@@ -5,12 +5,11 @@ var qrec = pgp.errors.queryResultErrorCode;
 var dataRetrieval = require('../../models/dataRetrieval');
 
 function getLinks(req, res) {
-	if(req.params.query !== 'favicon.ico') {
+	// need to find out why favicon and style are treated as queries
+	if(req.params.query !== 'favicon.ico' && req.params.query !== 'style.css') {
 		db.many('SELECT weburl, title, description FROM weburlsandcontent WHERE title = ${query}', req.params)
-			.then(function (data) {
-				console.log(data);
-				content = dataRetrieval(data);
-				res.send(content.join('</br>'));
+			.then(function (retrieved_data) {
+				res.render('search_results', {results: retrieved_data});
 			})
 			.catch(function (error) {
         console.log('The error is:\n', error);
