@@ -5,13 +5,13 @@ require('chai').use(require('sinon-chai'));
 const expect = require('chai').expect;
 const assert = require('assert');
 
-const urlRetrieval = require('../models/urlRetrieval');
+const dataRetrieval = require('../models/dataRetrieval');
 
 describe('retrieval', () => {
   it('adds urls from database rows to an array', () => {
     var fakeData;
     fakeData = [{ weburl: 'www.cats.com' }];
-    var retrieved = urlRetrieval(fakeData);
+    var retrieved = dataRetrieval(fakeData);
     expect(retrieved[0]).to.equal("www.cats.com");
   });
 });
