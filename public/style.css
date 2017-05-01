@@ -1,6 +1,7 @@
 body {
   margin: 50px;
-  background-color: #aedbf9;
+  background-color: white;
+  font-family: arial,sans-serif;
 }
 
 form {
@@ -51,6 +52,12 @@ form {
   background-color: #ffb646;
 }
 
+#search-form {
+  margin: auto;
+  margin-bottom: 5%;
+  width: 50%;
+}
+
 #fish {
   margin-top: 200px;
   margin: 70px auto;
@@ -58,6 +65,24 @@ form {
   margin-left: 660px;
 }
 
-.results_view  {
-    display: block;
+.result {
+  margin: 15px auto;
+}
+
+#weburl {
+  color: green;
+}
+
+#description {
+  color: #696969;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
 }
