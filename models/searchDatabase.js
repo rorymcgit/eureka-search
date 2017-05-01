@@ -5,26 +5,19 @@ var QueryResultError = pgp.errors.QueryResultError;
 var qrec = pgp.errors.queryResultErrorCode;
 
 function getData(search_request) {
-  console.log(search_request + "hello")
-		db.any('SELECT * FROM weburlsandcontent WHERE title = ${str}', {
-      str: search_request
-    })
-    .then(function (returned_data) {
-      data =  returned_data;
-      return data
-
-			// .then(function (retrieved_data) {
-			// 	return retrieved_data;
-				// res.render('search_results', {results: retrieved_data});
-			// });
-	})
+  db.any('SELECT * FROM weburlsandcontent WHERE title = ${str}', {
+    str: search_request
+  })
+  .then(function (returned_data) {
+    sayhello(returned_data)
+    // console.log(returned_data[0].id)
+    return returned_data
+  })
   ;}
 
-module.exports = getData;
+  module.exports = getData;
 
-// db.any("select * from users")
-//
-//     })
-//     .catch(function (error) {
-//         console.log(error);
-//     });
+
+function sayhello(string) {
+  console.log(string)
+}

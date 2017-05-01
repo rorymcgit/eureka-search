@@ -3,6 +3,8 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       getData = require('./models/searchDatabase'),
       app = express();
+      var db = require('./db.js');
+      var pgp = require('pg-promise')({noLocking:true});
 
       // body parser- parse incoming request bodies in a middleware before your handlers, available under the re.body property.
 
@@ -17,9 +19,15 @@ app.get('/', function (req, res) {
 });
 
 app.post('/search', urlencodedParser, function(req, res) {
-  // var query = req.body.searchinput;
-  console.log(getData(req.body.searchinput))
-});
+  var query = req.body.searchinput;
+  console.log(req.body.searchinput)
+  var results = db.any('SELECT * FROM weburlsandcontent WHERE title = ${str}', {
+      str: query
+    }).then(function (returned_data) {
+      console.log(returned_data)
+      res.render('search_results', {data: returned_data });
+    })
+})
 
 app.get('/about', function(req, res) {
     res.render('about');
