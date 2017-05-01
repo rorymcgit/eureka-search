@@ -3,7 +3,6 @@ var pgp = require('pg-promise')({noLocking:true});
 
 var QueryResultError = pgp.errors.QueryResultError;
 var qrec = pgp.errors.queryResultErrorCode;
-// var dataRetrieval = require('../../models/dataRetrieval');
 
 function getLinks(req, res) {
 	// need to find out why favicon and style are treated as queries
@@ -20,21 +19,5 @@ function getLinks(req, res) {
 		});
 	}
 }
-
-// function getLinks(req, res) {
-//   if (req.params.query !== 'favicon.ico') {
-//     db.map('SELECT weburl FROM weburlsandcontent WHERE title = ${query}', req.params, a => a.weburl)
-//     .then(function (urls) {
-//       if (urls.length) {
-//         res.send(urls.join('</br>'));
-//       } else {
-//         res.send('no links match your query');
-//       }
-//     })
-//     .catch(function (error) {
-//       console.log('The error is:\n', error);
-//     });
-//   } 
-// }
 
 module.exports = getLinks;
