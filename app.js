@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
   res.render('search');
 });
 
-app.post('/search/:query', urlencodedParser, function(req, res) {
+app.post('/search', urlencodedParser, function(req, res) {
   // var query = req.body.searchinput;
   console.log(req.body.searchinput);
   res.render('search_results', {data: req.body.searchinput});
