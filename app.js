@@ -15,12 +15,10 @@ app.get('/', function (req, res) {
 });
 
 app.post('/search', urlencodedParser, function(req, res) {
-  var query = req.body.searchinput;
-  console.log(req.body.searchinput);
-  var results = db.any('SELECT * FROM weburlsandcontent WHERE title = ${str}', {
+  var query = '%' + req.body.searchinput + '%';
+  var results = db.any('SELECT * FROM weburlsandcontent WHERE description LIKE ${str}', {
       str: query
     }).then(function (returned_data) {
-      console.log(returned_data);
       res.render('search_results', {data: returned_data, query: query});
     });
 });

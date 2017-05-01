@@ -8,11 +8,9 @@
   <!-- <h1 id="title">Go Fish</h1> -->
   <img id="fish" src="images/fish.png" height="100" width="165">
   <div id="search">
-  <form action="/search" method="post">
-   <input id="field" type="text" placeholder="Search..." name="searchinput"><br>
-   <input id="submit" type="submit" value="Go">
-  </form>
+<%- include('search-form.ejs') %>
 </div>
+
 </body>
 
 </html>
