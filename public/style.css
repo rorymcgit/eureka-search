@@ -1,5 +1,61 @@
-h1 {
-    font-family: verdana;
+body {
+  margin: 50px;
+  background-color: #aedbf9;
+}
+
+form {
+  width:100%;
+  text-align: center;
+  margin: 70px auto;
+  margin-left: 100px;
+}
+
+#search {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+#field {
+  display: inline;
+	float: left;
+	width:380px;
+	height:27px;
+	line-height:27px;
+	font-family:arial, sans-serif;
+  text-indent:10px;
+	font-size:1em;
+	background: #fff;
+	border:solid 1px #d9d9d9;
+	border-top:solid 1px #c0c0c0;
+	border-right:none;
+}
+
+#submit {
+  display:inline;
+  float: left;
+	cursor: pointer;
+	width:90px;
+	height: 29px;
+	font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  background-color: #FFA500;
+  color: white;
+  margin-top: -18px;
+  margin-left: 8px;
+}
+
+#submit:hover {
+  background-color: #ffb646;
+}
+
+#fish {
+  margin-top: 200px;
+  margin: 70px auto;
+  margin-bottom: -20px;
+  margin-left: 660px;
 }
 
 .results_view  {

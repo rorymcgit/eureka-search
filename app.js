@@ -9,7 +9,8 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
   /// response being sent to the user
-  res.send("Hello, you're home");
+  // res.send("Hello, you're home");
+  res.render('search');
 });
 
 app.get('/about', function(req, res) {
