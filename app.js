@@ -5,10 +5,7 @@ const express = require('express'),
 
       // body parser- parse incoming request bodies in a middleware before your handlers, available under the re.body property.
 
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
+var urlencodedParser = bodyParser.urlencoded({ extended: true});
 
 //search engine view to ejs
 app.set('view engine', 'ejs');
@@ -18,15 +15,17 @@ app.get('/', function (req, res) {
   res.render('search');
 });
 
+app.post('/search/:query', urlencodedParser, function(req, res) {
+  // var query = req.body.searchinput;
+  console.log(req.body.searchinput);
+  res.render('search_results', {data: req.body.searchinput});
+
+});
+
 app.get('/about', function(req, res) {
     res.render('about');
 });
 
-app.post('/search', function(req, res) {
-  var query = req.body.searchinput;
-  console.log(req.body.searchinput);
-  res.redirect(307, '/' + req.body.searchinput, getLinks);
-});
 
 // app.get('/:query', getLinks);
 
