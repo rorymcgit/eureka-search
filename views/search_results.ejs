@@ -5,7 +5,14 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <p>You searched for: <%= data.title %></p>
+    <p>You searched for: <%= query %></p>
+<% data.forEach(function (result) {%>
+  <div id ="title"><%= result.title %></div>
+  <div id ="weburl"><a href="<%= result.weburl %>"><%= result.weburl %></a></div>
+  <%= result.description %><br>
+  <%= result.keywords %><br>
+<% })%>
+
 
   </body>
 </html>
