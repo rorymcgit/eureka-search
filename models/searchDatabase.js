@@ -6,16 +6,19 @@ var qrec = pgp.errors.queryResultErrorCode;
 
 function getData(search_request) {
   console.log(search_request + "hello")
-		db.any('SELECT * FROM weburlsandcontent WHERE title="' + search_request + '"')
-    .then(function (data) {
-        return data;
+		db.any('SELECT * FROM weburlsandcontent WHERE title = ${str}', {
+      str: search_request
+    })
+    .then(function (returned_data) {
+      data =  returned_data;
+      return data
+
 			// .then(function (retrieved_data) {
 			// 	return retrieved_data;
 				// res.render('search_results', {results: retrieved_data});
 			// });
-	});}
-
-
+	})
+  ;}
 
 module.exports = getData;
 

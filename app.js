@@ -18,7 +18,6 @@ app.get('/', function (req, res) {
 
 app.post('/search', urlencodedParser, function(req, res) {
   // var query = req.body.searchinput;
-  console.log(req.body.searchinput);
   console.log(getData(req.body.searchinput))
 });
 
@@ -36,7 +35,6 @@ app.get('/:query', getLinks);
 /// takes users query and calls on getLinks.js
 
 app.listen(3000, function () {
-  console.log(getData)
   console.log('App listening on port 3000!');
 });
 
