@@ -12,16 +12,11 @@ describe('Preparing Query String', () => {
     prepareQueryString = new PrepareQueryString('query words');
   });
 
-  it('accepts a query as a string', () => {
-    assert.equal(prepareQueryString.query.constructor.name, 'String');
-  });
-
   it('has an array of words to remove from searches', () => {
     assert.equal(prepareQueryString.nonSearchWords.constructor.name, 'Array');
   });
 
   it('splits the query string into an array of strings', () => {
-    prepareQueryString.splitQueryString();
     var appendPercentageCharacter = sinon.spy(prepareQueryString, 'appendPercentageCharacter');
     assert.equal(prepareQueryString.query.constructor.name, 'Array');
   });
@@ -37,6 +32,5 @@ describe('Preparing Query String', () => {
     prepareQueryString.query = ['one', 'two', 'an'];
     prepareQueryString.removeNonSearchWords();
     assert.equal(prepareQueryString.query[2], undefined);
-    // assert.equal(prepareQueryString.query[1], '%two%');
   });
 });
