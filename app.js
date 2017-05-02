@@ -20,15 +20,6 @@ app.post('/search', urlencodedParser, function(req, res) {
   searchDatabase(query).then(function (returned_data) {
     res.render('search_results', {data: returned_data, query: query});
   });
-//   // getData(query, (callback function (returned_data) {
-  // res.render('search_results', {data: returned_data, query: query});
-// });
-// }
-  // var results = db.any('SELECT * FROM weburlsandcontent WHERE description LIKE ${str}', {
-  //     str: query
-  //   }).then(function (returned_data) {
-  //     res.render('search_results', {data: returned_data, query: query});
-  //   });
 });
 
 app.get('/about', function(req, res) {
