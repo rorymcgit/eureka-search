@@ -1,17 +1,17 @@
 var nonSearchWords = ['a', 'an', 'the', 'is', 'and', 'or', 'www.', 'he', 'she', 'it', 'they', 'i'];
 
 function prepareQueryString(query) {
-  splitQueryString(query);
+  return splitQueryString(query);
 }
 
 function splitQueryString(query) {
   query = query.split(' ');
-  removeNonSearchWords(query);
+  return removeNonSearchWords(query);
 }
 
 function removeNonSearchWords(query_array) {
   query_array = difference(query_array, nonSearchWords);
-  appendPercentageCharacter(query_array);
+  return appendPercentageCharacter(query_array);
 }
 
 function appendPercentageCharacter(query_array) {
@@ -28,5 +28,3 @@ function difference (query_array, wordsToRemove) {
 }
 
 module.exports = prepareQueryString;
-
-// prepareQueryString("hello vicky")
