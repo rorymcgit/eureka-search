@@ -1,9 +1,10 @@
 const express = require('express'),
       getLinks = require('./controllers/routes/getLinks'),
+      searchDatabase = require('./models/searchDatabase'),
       bodyParser = require('body-parser'),
+      db = require('./db.js'),
+      pgp = require('pg-promise')({noLocking:true}),
       app = express();
-      var db = require('./db.js');
-      var pgp = require('pg-promise')({noLocking:true});
 
 var urlencodedParser = bodyParser.urlencoded({ extended: true});
 
@@ -16,11 +17,18 @@ app.get('/', function (req, res) {
 
 app.post('/search', urlencodedParser, function(req, res) {
   var query = '%' + req.body.searchinput + '%';
-  var results = db.any('SELECT * FROM weburlsandcontent WHERE description LIKE ${str}', {
-      str: query
-    }).then(function (returned_data) {
-      res.render('search_results', {data: returned_data, query: query});
-    });
+  searchDatabase(query).then(function (returned_data) {
+    res.render('search_results', {data: returned_data, query: query});
+  });
+//   // getData(query, (callback function (returned_data) {
+  // res.render('search_results', {data: returned_data, query: query});
+// });
+// }
+  // var results = db.any('SELECT * FROM weburlsandcontent WHERE description LIKE ${str}', {
+  //     str: query
+  //   }).then(function (returned_data) {
+  //     res.render('search_results', {data: returned_data, query: query});
+  //   });
 });
 
 app.get('/about', function(req, res) {
