@@ -58,11 +58,10 @@ form {
   width: 50%;
 }
 
-#fish {
-  margin-top: 200px;
-  margin: 70px auto;
-  margin-bottom: -20px;
-  margin-left: 660px;
+#fish_div {
+  width: 165px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .result {
