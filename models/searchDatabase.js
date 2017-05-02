@@ -1,5 +1,6 @@
 var db = require('../db.js');
 var pgp = require('pg-promise')({noLocking:true});
+var prepareQueryString = require('./prepareQueryString');
 
 function searchDatabase(search) {
   var description_search = db.any('SELECT * FROM weburlsandcontent WHERE description LIKE ${str}', {
