@@ -1,6 +1,6 @@
 function PrepareQueryString(query) {
   this.query = query;
-  this.nonSearchWords = ['a', 'an', 'the', 'is', 'and', 'or', 'www.', 'he', 'she', 'it', 'they', 'i']
+  this.nonSearchWords = ['a', 'an', 'the', 'is', 'and', 'or', 'www.', 'he', 'she', 'it', 'they', 'i'];
 }
 
 PrepareQueryString.prototype.splitQueryString = function() {
@@ -15,8 +15,16 @@ PrepareQueryString.prototype.appendPercentageCharacter = function() {
 };
 
 PrepareQueryString.prototype.removeNonSearchWords = function() {
-  this.query = ['one', 'two']
-  };
+    this.query = this.query.difference(this.nonSearchWords);
+};
+
+Array.prototype.difference = function(wordsToRemove) {
+  return this.filter(function(word) {
+    return wordsToRemove.indexOf(word) < 0;
+  });
+};
+
+
 
 
 module.exports = PrepareQueryString;
