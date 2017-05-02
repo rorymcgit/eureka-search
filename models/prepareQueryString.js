@@ -1,29 +1,32 @@
-function PrepareQueryString(query) {
-  this.query = query;
-  this.nonSearchWords = ['a', 'an', 'the', 'is', 'and', 'or', 'www.', 'he', 'she', 'it', 'they', 'i'];
-  this.splitQueryString();
-}
+var nonSearchWords = ['a', 'an', 'the', 'is', 'and', 'or', 'www.', 'he', 'she', 'it', 'they', 'i'];
 
-PrepareQueryString.prototype.splitQueryString = function() {
-  this.query = this.query.split(' ');
-  this.removeNonSearchWords();
+function prepareQueryString(query) {
+  splitQueryString(query);
 };
 
-PrepareQueryString.prototype.removeNonSearchWords = function() {
-  this.query = this.query.difference(this.nonSearchWords);
-  this.appendPercentageCharacter();
+function splitQueryString(query) {
+  query = query.split(' ');
+  removeNonSearchWords(query);
 };
 
-PrepareQueryString.prototype.appendPercentageCharacter = function() {
-  this.query = this.query.map(function(word) {
+function removeNonSearchWords(query_array) {
+  query_array = difference(query_array, nonSearchWords);
+  appendPercentageCharacter(query_array);
+};
+
+function appendPercentageCharacter(query_array) {
+  query_array = query_array.map(function(word) {
     return "%" + word + "%";
   });
+  return query_array
 };
 
-Array.prototype.difference = function(wordsToRemove) {
-  return this.filter(function(word) {
+function difference (query_array, wordsToRemove) {
+  return query_array.filter(function(word) {
     return wordsToRemove.indexOf(word) < 0;
   });
 };
 
-module.exports = PrepareQueryString;
+module.exports = prepareQueryString;
+
+// prepareQueryString("hello vicky")

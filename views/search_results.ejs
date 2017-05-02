@@ -12,9 +12,8 @@
   <div id="user-search">
     <p>Your search: <%= query %></p>
   </div>
-
-  <% data.forEach(function (array) { %>
-    <% array.forEach (function(result){ %>
+  <% data.forEach(function (result) { %>
+    <%= console.log(result) %>
 
   <div class="result">
     <div id="title">
@@ -30,7 +29,6 @@
       <%= result.weburl %>
     </div>
     <% }) %>
-  <% }) %>
 
   </div>
 
