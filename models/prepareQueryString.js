@@ -29,3 +29,4 @@ function difference (query_array, wordsToRemove) {
 }
 
 module.exports = prepareQueryString;
+module.exports = appendPercentageCharacter;
