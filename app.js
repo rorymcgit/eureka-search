@@ -1,9 +1,9 @@
 const express = require('express'),
       getLinks = require('./controllers/routes/getLinks'),
       bodyParser = require('body-parser'),
+      db = require('./db.js');
+      pgp = require('pg-promise')({noLocking:true});
       app = express();
-      var db = require('./db.js');
-      var pgp = require('pg-promise')({noLocking:true});
 
 var urlencodedParser = bodyParser.urlencoded({ extended: true});
 
