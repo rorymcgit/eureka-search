@@ -13,7 +13,9 @@
     <p>Your search: <%= query.slice(1, -1)%></p>
   </div>
 
-  <% data.forEach(function (result) {%>
+  <% data.forEach(function (array) { %>
+    <% array.forEach (function(result){ %>
+
   <div class="result">
     <div id="title">
       <a href="<%= result.weburl %>"><%= result.title %></a>
@@ -28,6 +30,8 @@
       <%= result.weburl %>
     </div>
     <% }) %>
+  <% }) %>
+
   </div>
 
 </body>
