@@ -1,7 +1,7 @@
 var nonSearchWords = ['a', 'an', 'the', 'is', 'and', 'or', 'www.', 'he', 'she', 'it', 'they', 'i'];
 
 function prepareQueryString(query) {
-  var query = query.replace(/\W/g, '');
+  var query = query.replace(/[^\w\s]/gi, '');
   return splitQueryString(query);
 }
 
