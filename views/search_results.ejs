@@ -5,30 +5,34 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <div id="search-form"
+  <div id="search-form">
   <%- include('search-form.ejs') %>
-  </div>
+</div>
 
-  <div id="user-search">
-    <p>Your search: <%= query.slice(1, -1)%></p>
-  </div>
+<div id="user-search">
+  <p>Your search: <%= query %></p>
+</div>
 
-  <% data.forEach(function (result) {%>
-  <div class="result">
-    <div id="title">
-      <a href="<%= result.weburl %>"><%= result.title %></a>
-    </div>
-    <div id="description">
-      <%= result.description %>
-    </div>
-    <div id="keywords">
-      <%= result.keywords %>
-    </div>
-    <div id="weburl">
-      <%= result.weburl %>
-    </div>
-    <% }) %>
-  </div>
+<% data.forEach(function (array) { %>
+  <% array.forEach (function(result){ %>
 
-</body>
-</html>
+    <div class="result">
+      <div id="title">
+        <a href="<%= result.weburl %>"><%= result.title %></a>
+      </div>
+      <div id="description">
+        <%= result.description %>
+      </div>
+      <div id="keywords">
+        <%= result.keywords %>
+      </div>
+      <div id="weburl">
+        <%= result.weburl %>
+      </div>
+      <% }) %>
+      <% }) %>
+
+    </div>
+
+  </body>
+  </html>
