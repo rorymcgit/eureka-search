@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <div id="search-form">
+<div id="search-form">
   <%- include('search-form.ejs') %>
 </div>
 
@@ -17,7 +17,7 @@
   <% array.forEach (function(result){ %>
 
     <div class="result">
-      <div id="title">
+      <div id="link">
         <a href="<%= result.weburl %>"><%= result.title %> ...</a>
       </div>
       <div id="description">

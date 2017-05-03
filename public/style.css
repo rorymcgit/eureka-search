@@ -1,5 +1,5 @@
 body {
-  margin: 50px;
+  /*margin: 50px;*/
   background-color: white;
   font-family: arial,sans-serif;
 }
@@ -17,6 +17,11 @@ form {
   padding: 10px;
 }
 
+#form-wrapper {
+  border: solid red 1px;
+  
+}
+
 #field {
   display: inline;
 	float: left;
@@ -29,7 +34,10 @@ form {
 	background: #fff;
 	border:solid 1px #d9d9d9;
 	border-top:solid 1px #c0c0c0;
-	border-right:none;
+	border-right:solid 1px #c0c0c0;
+  margin: 0 auto;
+  /*position: relative;*/
+  position: fixed;
 }
 
 #submit {
@@ -44,6 +52,8 @@ form {
   border: none;
   background-color: #FFA500;
   color: white;
+  margin: 0 auto;
+  position: fixed;
   margin-top: -18px;
   margin-left: 8px;
 }
@@ -53,15 +63,27 @@ form {
 }
 
 #search-form {
-  margin: auto;
-  margin-bottom: 5%;
-  width: 50%;
+  border: solid blue 1px;
+  /*text-align: center;*/
+  margin: 0 auto;
+  /*margin-bottom: 5%;*/
+  width: 100%;
 }
 
 #fish_div {
   width: 165px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#title {
+  font-family: 'Bungee Hairline', cursive;
+  border: solid black 1px;
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 80px;
 }
 
 .result {
