@@ -1,5 +1,4 @@
 const express = require("express"),
-  getLinks = require("./controllers/routes/getLinks"),
   searchDatabase = require("./models/searchDatabase"),
   bodyParser = require("body-parser"),
   db = require("./db.js"),
