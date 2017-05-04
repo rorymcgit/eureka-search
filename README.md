@@ -2,14 +2,14 @@
 
 Final project (weeks 11 & 12) at Makers Academy. Tasked with working on a project of our design in languages and testing frameworks of our choice.
 
+Central throughout the project were TDD/BDD, XP values and agile practices.
+
 Team:
 
 - [Clem Capel-Bird](https://github.com/ClemCB)
 - [Nicholas Leacock](https://github.com/marudine)
 - [Vicky Ledsom](https://github.com/ledleds)
 - [Rory McGuinness](https://github.com/rorymcgit)
-
-Central throughout the project: TDD/BDD, XP values and agile practices.
 
 ## Epic User Stories
 
@@ -31,13 +31,12 @@ I want to be able to see all the webpages with titles, keywords and descriptions
 - JavaScript
 - Mocha & Chai for testing
 - PostgreSQL Database
-- pg promise
 
 ## How to Run
 
-- Follow the instructions and run [Eureka Crawler](https://github.com/ledleds/beetle-crawler)
-- `git clone` this project directory and `cd eureka-search-engine` into it on your local machine
-- `npm install` to install project dependencies
+- Follow the instructions on [Eureka Crawler](https://github.com/ledleds/beetle-crawler) to run a crawl
+- `git clone` this project directory
+- `npm install` to install dependencies from within the project root
 - `npm test` to run Mocha and Chai tests
 - Run `nodemon` to run Eureka Search Engine locally
 - Visit `localhost:3000` on your favourite browser and search the websites from your crawl with Eureka Crawler!
