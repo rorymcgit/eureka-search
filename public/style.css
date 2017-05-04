@@ -125,11 +125,12 @@ form {
 }
 
 #quote-div {
-  position: relative;
+  position: absolute;
   color: lightgray;
   text-align: center;
   width: 100%;
   bottom: 10px;
   height: 60px;
-  margin-top: 400px;
+  left: 0;
+  right: 0;
 }
