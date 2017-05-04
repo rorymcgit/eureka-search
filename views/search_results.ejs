@@ -12,15 +12,15 @@
 <body>
 
 <div id="search-form">
-  <a href=<%- "'/'" %>><div id="title-results"> EUREKA </div></a>
+  <a id="title-link" href=<%- "'/'" %>><div id="title-results"> EUREKA </div></a>
   <%- include('search-form.ejs') %>
 </div>
 
-      <div id = "all-results">
-        <p>Your search: <%= query %></p>
+<div id = "all-results">
+  <p>Your search: <%= query %></p>
 
-        <% data.forEach(function (array) { %>
-          <% array.forEach (function(result){ %>
+  <% data.forEach(function (array) { %>
+    <% array.forEach (function(result){ %>
 
     <div class="result">
       <div id="link">
@@ -35,9 +35,9 @@
       <div id="weburl">
         <%= result.weburl %>
       </div>
-      <% }) %>
-      <% }) %>
-      
+    <% }) %>
+  <% }) %>
+
       </div>
 
     </body>
