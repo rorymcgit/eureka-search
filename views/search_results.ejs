@@ -1,16 +1,20 @@
 <!DOCTYPE HTML>
-  <html>
-    <head>
-      <title>Eureka</title>
-      <link rel="stylesheet" type="text/css" href="style.css" />
-      <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
-    </head>
-    <body>
+<html>
+<head>
 
-      <div id="search-form">
-        <div id="title-results"> EUREKA </div>
-        <div id=search-results><%- include('search-form.ejs') %></div>
-      </div>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <title>Eureka</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
+</head>
+<body>
+
+<div id="search-form">
+  <a href=<%- "'/'" %>><div id="title-results"> EUREKA </div></a>
+  <%- include('search-form.ejs') %>
+</div>
 
       <div id = "all-results">
         <p>Your search: <%= query %></p>
@@ -18,24 +22,22 @@
         <% data.forEach(function (array) { %>
           <% array.forEach (function(result){ %>
 
-            <div class="result">
-              <div id="link">
-                <a href="<%= result.weburl %>"><%= result.title %> ...</a>
-              </div>
-              <div id="description">
-                <%= result.description %>
-              </div>
-              <div id="keywords">
-                <%= result.keywords %>
-              </div>
-              <div id="weburl">
-                <%= result.weburl %>
-              </div>
-            </div>
-
-          <% }) %>
-        <% }) %>
-
+    <div class="result">
+      <div id="link">
+        <a id="result-title" href="<%= result.weburl %>"><%= result.title %> ...</a>
+      </div>
+      <div id="description">
+        <%= result.description %>
+      </div>
+      <div id="keywords">
+        <%= result.keywords %>
+      </div>
+      <div id="weburl">
+        <%= result.weburl %>
+      </div>
+      <% }) %>
+      <% }) %>
+      
       </div>
 
     </body>

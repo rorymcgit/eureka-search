@@ -9,7 +9,7 @@ body {
   font-family: 'Bungee Hairline', cursive;
   width: 100%;
   text-align: center;
-  margin-top: 250px;
+  margin-top: 200px;
   font-size: 80px;
 }
 
@@ -71,7 +71,7 @@ form {
   border: solid darkgray 1px;
   float: right;
 	cursor: pointer;
-	width:90px;
+	width: 90px;
 	height: 29px;
 	font-size: 12px;
   font-weight: bold;
@@ -96,12 +96,12 @@ form {
   font-size: 14px;
 }
 
-a {
+#result-title {
   text-decoration: none;
   font-size: 20px;
 }
 
-a:hover {
+#result-title:hover {
   text-decoration: underline;
 }
 
