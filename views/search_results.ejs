@@ -16,12 +16,11 @@
   <%- include('search-form.ejs') %>
 </div>
 
-<div id="user-search">
-  <p>Your search: <%= query %></p>
-</div>
+      <div id = "all-results">
+        <p>Your search: <%= query %></p>
 
-<% data.forEach(function (array) { %>
-  <% array.forEach (function(result){ %>
+        <% data.forEach(function (array) { %>
+          <% array.forEach (function(result){ %>
 
     <div class="result">
       <div id="link">
@@ -38,8 +37,8 @@
       </div>
       <% }) %>
       <% }) %>
+      
+      </div>
 
-    </div>
-
-  </body>
+    </body>
   </html>
