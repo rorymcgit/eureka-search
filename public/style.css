@@ -104,3 +104,14 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+#quote-div {
+  position: relative;
+  /*border: solid green 1px;*/
+  color: lightgray;
+  text-align: center;
+  /*margin: 0 auto;*/
+  width: 100%;
+  bottom:10px;
+  height:60px;   /* Height of the footer */
+}
