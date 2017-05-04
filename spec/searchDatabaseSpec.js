@@ -1,21 +1,15 @@
-'use strict';
+"use strict";
 
-require('chai').use(require('sinon-chai'));
+const expect = require("chai").expect,
+  searchDatabase = require("../models/searchDatabase");
 
-const sinon = require('sinon'),
-      expect = require('chai').expect,
-      assert = require('assert'),
-      db = require('../db.js'),
-      searchDatabase = require('../models/searchDatabase');
+describe("Search Database", () => {
+  it("searchDatabase accepts a string and returns an object", () => {
+    expect(searchDatabase("string")).to.eql({});
+  });
 
-describe('Search Database', () => {
-  it('searchDatabase calls database querier', () => {
-    var fakeRequest, fakeResponse, spyDB;
-    fakeRequest = { params: { query: 'cats' } };
-    fakeResponse = {};
-    spyDB = sinon.spy(db, 'any');
-    searchDatabase(fakeRequest, fakeResponse);
-    expect(spyDB).called;
-    spyDB.restore();
+  it("test length", () => {
+    var call_search_database = searchDatabase("string");
+    expect(call_search_database).to.be.a("promise");
   });
 });
