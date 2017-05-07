@@ -1,4 +1,4 @@
 var pgp = require('pg-promise')({noLocking:true});
-var db = pgp('postgres://localhost/beetle_crawler_development');
+var db = pgp('postgres://localhost/eureka_development');
 
 module.exports = db;
