@@ -5,6 +5,8 @@ const express = require("express"),
   pgp = require("pg-promise")({ noLocking: true }),
   app = express();
 
+var port = 3000;
+
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 app.set("view engine", "ejs");
@@ -19,7 +21,6 @@ app.post("/search", urlencodedParser, function(req, res) {
   var query = req.body.searchinput;
   searchDatabase(query)
     .then(function(returned_data) {
-      console.log(returned_data);
       res.render("search_results", { data: returned_data, query: query });
     })
     .catch(function(e) {
@@ -27,12 +28,8 @@ app.post("/search", urlencodedParser, function(req, res) {
     });
 });
 
-app.get("/about", function(req, res) {
-  res.render("about");
-});
-
-app.listen(3000, function() {
-  console.log("I'M LISTENING #3000!");
+app.listen(port, function() {
+  console.log("App is live on port " + port);
 });
 
 module.exports = app;
