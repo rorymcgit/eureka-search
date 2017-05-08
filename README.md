@@ -15,27 +15,22 @@ Team:
 
 ![](https://github.com/rorymcgit/eureka-search/blob/master/scrngrb.png)
 
-## Epic User Stories
+## Epic User Story
 
 ```
 As a user of the web,
 So that I can find interesting webpages,
-I want to be able to search with multiple words.
-```
-```
-As a user of the web,
-So that I can find interesting webpages,
-I want to be able to see all the webpages with titles, descriptions and keywords which contain my search term.
+I want to be able to input multiple words and see all related webpages.
 ```
 
-## How to Run
+## Usage instructions
 
 - Follow the instructions on [Eureka Crawler](https://github.com/rorymcgit/eureka-crawler) to run a crawl
-- `git clone` this project directory
-- `npm install` to install dependencies from within the project root
-- `npm test` to run Mocha and Chai tests
-- Run `nodemon` to run Eureka Search Engine locally
-- Visit `localhost:3000` on your favourite browser and search the websites from your crawl with Eureka Crawler!
+- `git clone` this repo
+- `npm install` to install dependencies listed in package.json
+- `npm test` to run all tests
+- Run `nodemon` to start up Eureka Search Engine locally
+- Visit `localhost:3000` on your favourite browser and search the websites from your crawl
 
 
 ## Technologies
