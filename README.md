@@ -13,7 +13,7 @@ Team:
 - [Vicky Ledsom](https://github.com/ledleds)
 - [Rory McGuinness](https://github.com/rorymcgit)
 
-[image](https://github.com/rorymcgit/eureka-search/blob/master/scrngrb_home.png)
+![](https://github.com/rorymcgit/eureka-search/blob/master/scrngrb_home.png)
 
 ## Epic User Stories
 
