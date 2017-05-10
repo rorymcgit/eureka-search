@@ -34,9 +34,4 @@ I want to be able to input multiple words and see all related webpages.
 - Mocha & Chai (testing framework/assertion library)
 - PostgreSQL
 
-#### Team:
-
-- [Clem Capel-Bird](https://github.com/ClemCB)
-- [Nicholas Leacock](https://github.com/marudine)
-- [Vicky Ledsom](https://github.com/ledleds)
-- [Rory McGuinness](https://github.com/rorymcgit)
+#### Team: [Clem Capel-Bird](https://github.com/ClemCB), [Nicholas Leacock](https://github.com/marudine), [Vicky Ledsom](https://github.com/ledleds) and [Rory McGuinness](https://github.com/rorymcgit)
