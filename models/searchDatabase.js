@@ -4,7 +4,6 @@ var prepareQueryForDatabaseSearch = require("./prepareQueryString");
 
 function searchDatabase(search) {
   search = prepareQueryForDatabaseSearch(search);
-
   var database_search = [];
 
   for (var i = 0; i < search.length; i++) {

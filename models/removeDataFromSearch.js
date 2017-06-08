@@ -14,11 +14,10 @@ var nonSearchWords = [
 ];
 
 function removeDataFromSearch(query) {
-  remove_unwanted_characters = difference(query, nonSearchWords);
-  return remove_unwanted_characters;
+  return _difference(query, nonSearchWords);
 }
 
-function difference(query_array, wordsToRemove) {
+function _difference(query_array, wordsToRemove) {
   return query_array.filter(function(word) {
     return wordsToRemove.indexOf(word) < 0;
   });
