@@ -16,12 +16,10 @@ describe("Preparing Query String For Database Search", () => {
       "%dogs%"
     ]);
 
-    // Failing test as returning '%%':
     it("returns an empty array when input is empty", () => {
       expect(prepareQueryForDatabaseSearch("cats   dogs   cats")).to.eql([]);
     });
 
-    // False pass!
     it("removes duplicate words", () => {
       run_remove_data_from_search = removeDataFromSearch(["cats", "cats"]);
       expect(run_remove_data_from_search).to.eql(["%cats%"]);
