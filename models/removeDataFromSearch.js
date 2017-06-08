@@ -19,7 +19,7 @@ function removeDataFromSearch(query) {
 
 function _difference(query_array, wordsToRemove) {
   return query_array.filter(function(word) {
-    return wordsToRemove.indexOf(word) < 0;
+    return wordsToRemove.indexOf(word) === -1;
   });
 }
 
