@@ -1,13 +1,13 @@
 const removeDataFromSearch = require("./removeDataFromSearch");
 
 function prepareQueryForDatabaseSearch(query) {
-  var query_array = query.split(" ");
-  var stripped_query = removeDataFromSearch(query_array);
-  return appendPercentageCharacter(stripped_query);
+  var queryArray = query.split(" ");
+  var strippedQuery = removeDataFromSearch(queryArray);
+  return appendPercentageCharacter(strippedQuery);
 }
 
-function appendPercentageCharacter(query_array) {
-  return query_array.map(function(word) {
+function appendPercentageCharacter(queryArray) {
+  return queryArray.map(function(word) {
     return "%" + word + "%";
   });
 }

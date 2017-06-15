@@ -17,8 +17,8 @@ function removeDataFromSearch(query) {
   return _difference(query, nonSearchWords);
 }
 
-function _difference(query_array, wordsToRemove) {
-  return query_array.filter(function(word) {
+function _difference(queryArray, wordsToRemove) {
+  return queryArray.filter(function(word) {
     return wordsToRemove.indexOf(word) === -1;
   });
 }
